@@ -1,11 +1,19 @@
 package application;
 
+/**
+ * Diese Klasse kann eine Konstante Startzeit speichern
+ * und auf Abruf die verstrichene Zeit seit dem Start zurückgeben
+ * 
+ * @author Many, Sven, Lewin
+ * @version 1.0
+ */
+
 import java.util.Date;
 
 public class Stopwatch {
 
 	/**
-	 * Konstante, die die Startzeit der Stopuhr speichert
+	 * Konstante, die die Stwartzeit der Stopuhr speichert
 	 */
     private final long startingTime;
 

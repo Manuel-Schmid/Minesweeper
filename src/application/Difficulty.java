@@ -1,5 +1,13 @@
 package application;
 
+/**
+ * Diese Klasse dient als Memento-Klasse, in der die wichtigsten Spielstand
+ * Infos gespeichert werden, damit sie später wiederhergestellt werden können
+ * 
+ * @author Many, Sven, Lewin
+ * @version 1.0
+ */
+
 public interface Difficulty {
 	
 	/**

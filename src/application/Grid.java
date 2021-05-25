@@ -39,7 +39,7 @@ public class Grid {
     private final Stopwatch stopwatch;
 
 	/**
-	 * Constructor des Grids. Setzte sämtliche Werte für ein neues Grid
+	 * Konstruktor des Grids. Setzte sämtliche Werte für ein neues Grid
 	 * Erstellt anhand dieser Werte das neue Spielfeld
 	 * @param columns Anzahl Spalten als int
 	 * @param rows Anzahl Reihen als int

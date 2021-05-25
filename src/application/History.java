@@ -1,5 +1,14 @@
 package application;
 
+/**
+ * Diese Klasse beinhaltet einen Stack der es ermöglicht,
+ * Spielstände zu speichern, bevor ein Zug gemacht wird
+ * Somit kann ein BackUp einfach wiederhergestellt werden.
+ * 
+ * @author Many, Sven, Lewin
+ * @version 1.0
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +50,6 @@ public class History {
      * @return Gibt an, ob auf dem Stack nur noch ein GameState liegt
      */
     public static boolean needsReset() {
-        return states.size() <= 1;
+        return states.size() <= 0;
     }
 }

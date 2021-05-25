@@ -1,5 +1,14 @@
 package application;
 
+/**
+ * Diese Klasse stellt ein Feld im Spielfeld dar. 
+ * Alle nötigen Variablen für die Verwaltung dieser Felder
+ * sind unter Beachtung der Datenkapselung zugängig.
+ * 
+ * @author Many, Sven, Lewin
+ * @version 1.0
+ */
+
 public class Field {
 	
 	/**

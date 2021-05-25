@@ -1,9 +1,13 @@
 package application;
 
 /**
- * @author Manuel Schmid, Lewin Rutz und Sven Walser
+ * Diese Klasse instanziert ein neues Spiel
+ * und erhält die meisten Befehle vom Main.
+ * Befehle die das Spielfeld direkt betreffen, 
+ * werden an die Grid-Klasse weitergeleitet
+ * 
+ * @author Many, Sven, Lewin
  * @version 1.0
- *  
  */
 
 import java.util.Date;
@@ -25,6 +29,22 @@ public class Game {
 	 * Variable für die Anzahl übriger Flags
 	 */
 	private static int flags = 0;
+	
+    /**
+     * Variable die anzeigt, ob schon ein Zug gemacht wurde
+     */
+    private boolean isFirstMove = true;
+	
+    /**
+     * Konstruktor für die Klasse Game
+     * setzt die flags der Schwierigkeit entsprechend und erstellt ein entsprechendes Grid.
+     * @param charDifficulty Parameter für die Schwierigkeit
+     */
+    public Game(char charDifficulty) {
+        setDifficulty(charDifficulty);
+        flags = difficulty.getBombCount();
+        grid = new Grid(difficulty.getGridSize()[0], difficulty.getGridSize()[1], difficulty.getBombCount(), new Date().getTime());
+    }
 
 	/**
 	 * Erstellt ein BackUp vom Spielstand
@@ -46,17 +66,6 @@ public class Game {
     }
 
     /**
-     * Konstruktor für die Klasse Game
-     * setzt die flags der Schwierigkeit entsprechend und erstellt ein entsprechendes Grid.
-     * @param charDifficulty Parameter für die Schwierigkeit
-     */
-    public Game(char charDifficulty) {
-        setDifficulty(charDifficulty);
-        flags = difficulty.getBombCount();
-        grid = new Grid(difficulty.getGridSize()[0], difficulty.getGridSize()[1], difficulty.getBombCount(), new Date().getTime());
-    }
-
-    /**
      * Setzt die Schwierigkeit mit dem Strategy-Pattern basierend auf einem Parameter
      * @param charDif Parameter für die Schwierigkeit
      */
@@ -67,11 +76,6 @@ public class Game {
             case 'H' -> difficulty = new Hard();
         }
     }
-
-    /**
-     * Variable die anzeigt, ob schon ein Zug gemacht wurde
-     */
-    private boolean isFirstMove = true;
 
     /**
      * Sorgt dafür das ein Feld aufgedeckt wird, indem es den Befehl an das Grid weiterleitet

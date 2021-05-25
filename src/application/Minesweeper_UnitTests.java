@@ -93,13 +93,11 @@ class Minesweeper_UnitTests {
       assertEquals(expected, actual, "testShowFieldIsAlreadyShown fails");
     }
     
-    
-  //Flag Fields
 
     @Test
     void testFlagFieldStandard() {
       Game g = new Game('E');
-      boolean actual = g.flagField("A2", true); //true = flag false= unflag
+      boolean actual = g.flagField("A2", true);
       assertTrue(actual, "testFlagFieldStandard fails");
     }
 
@@ -123,7 +121,6 @@ class Minesweeper_UnitTests {
       boolean actual = g.flagField("x30", true);
       assertTrue(actual, "testFlagFieldInvalidCoordinates fails");
     }
-
 
     @Test
     void testFlagFieldIsAlreadyFlaged() {
@@ -151,10 +148,6 @@ class Minesweeper_UnitTests {
       assertTrue(actual, "testFlagFieldNoFlagsLeft fails");
     }
 
-
-
-
-    //Unflag Tests
 
     @Test
     void testUnFlagFieldStandard() {
@@ -291,7 +284,7 @@ class Minesweeper_UnitTests {
     }
     
     @Test
-    void testFlagging() {
+    void testDeepCopyFieldList() {
       Game g = new Game('M');
       g.showField("A1");
       Field[][] board = g.getGrid().deepCopyFieldList();
@@ -299,8 +292,8 @@ class Minesweeper_UnitTests {
       g.getGrid().getField(15,15).setFlagged(true);
       boolean actual2 = board[15][15].isFlagged();
       
-      assertFalse(actual1, "testFlagging fails");
-      assertFalse(actual2, "testFlagging fails"); // müsste false sein, ist aber true
+      assertFalse(actual1, "testDeepCopyFieldList fails");
+      assertFalse(actual2, "testDeepCopyFieldList fails");
     }
     
     @Test
@@ -404,22 +397,7 @@ class Minesweeper_UnitTests {
         long actual = stopwatch.getStartingTime();
         assertEquals(expected, actual, "testStopwatch failed");
     }
-    
-//    @Test
-//    void testIsVictory() {
-//        Game game = new Game('E');
-//        game.showField("A2");
-//        Field[][] fieldList = game.getGrid().deepCopyFieldList();
-//        for (int i = 0; i < fieldList.length; i++) {
-//        	for (int j = 0; j < fieldList[0].length; j++) {
-//        		if(fieldList[i][j].isBomb()) { fieldList[i][j].setFlagged(true); }
-//        	}
-//        }
-//        boolean actual = game.getGrid().isVictory();
-//        boolean expected = true;
-//        assertEquals(expected, actual, "testIsVictory fails");
-//    }
-    
+       
     @Test
     void testUncoverGridFieldFirstMove() {
       Game g = new Game('E');

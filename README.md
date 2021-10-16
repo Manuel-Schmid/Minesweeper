@@ -1,6 +1,6 @@
 # Minesweeper
 ## About
-### Contributers
+### Contributors
 
   * Manuel Schmid
   * Lewin Rutz
